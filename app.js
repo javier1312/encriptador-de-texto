@@ -1,4 +1,19 @@
 
+
+function habilitarBotones(){
+  let txtArIngresa = document.getElementById("textoOriginal").value;
+  let btnEncript = document.getElementById("Encriptar");
+  let btnDesencript = document.getElementById("Desencriptar");
+
+  if(txtArIngresa.trim() !== ""){
+    btnEncript.disabled =false;
+    btnDesencript.disabled =false;
+  }else{
+    btnEncript.disabled =true;
+    btnDesencript.disabled =true;
+  }
+}
+
 function encriptarTexto(){
   let encryptedText2 = document.getElementById("encryptedText2");
   let mensaje = document.getElementById("textoOriginal").value.toLowerCase();
@@ -6,6 +21,8 @@ function encriptarTexto(){
   let textMuñeco = document.getElementById("textMuñeco");
   let textMuñeco2 = document.getElementById("textMuñeco2");
   let copy = document.getElementById("copy");
+  let btnEncript = document.getElementById("Encriptar");
+  let btnDesencript = document.getElementById("Desencriptar");
   let encryptedText = '';
     for (let i = 0; i < mensaje.length; i++) {
         switch (mensaje[i]) {
@@ -35,23 +52,38 @@ function encriptarTexto(){
   textMuñeco2.style.display="none";
   copy.style.visibility="visible";
   encryptedText2.value=encryptedText;
-    
+  btnEncript.disabled =true;
+  btnDesencript.disabled =true;
 }
 
 function copy(){
   let textarea = document.getElementById("encryptedText2");
+  let muñeco = document.getElementById("muñeco");
+  let textMuñeco = document.getElementById("textMuñeco");
+  let textMuñeco2 = document.getElementById("textMuñeco2");
+  let copy = document.getElementById("copy");
   textarea.select();
   document.execCommand("copy");
-  if (document.queryCommandSupported("copy")) {
-    alert("Texto copiado al portapapeles");
-  } else {
-    alert("La copia al portapapeles no es compatible en este navegador.");
-  }
+  textarea.style.display="none";
   document.getElementById('encryptedText2').value = "";
+  if(window.innerWidth <768){
+    muñeco.style.display="none";
+  }else{
+    muñeco.style.display="block";
+  }
+  textMuñeco.style.display="block";
+  textMuñeco2.style.display="block";
+  copy.style.visibility="hidden";
 }
 
 function desencriptarTexto(){
   let encriptedText = document.getElementById("textoOriginal").value.toLowerCase();
+  let muñeco = document.getElementById("muñeco");
+  let textMuñeco = document.getElementById("textMuñeco");
+  let textMuñeco2 = document.getElementById("textMuñeco2");
+  let copy = document.getElementById("copy");
+  let btnEncript = document.getElementById("Encriptar");
+  let btnDesencript = document.getElementById("Desencriptar");
             let originalText = '';
 
             let i = 0;
@@ -76,6 +108,13 @@ function desencriptarTexto(){
                     i++;
                 }
             }
-
-            document.getElementById('encryptedText2').value = originalText;
+  encryptedText2.style.display = `block`;
+  muñeco.style.display="none";
+  textMuñeco.style.display="none";
+  textMuñeco2.style.display="none";
+  copy.style.visibility="visible";
+  btnEncript.disabled =true;
+  btnDesencript.disabled =true;
+  document.getElementById('textoOriginal').value = "";
+  document.getElementById('encryptedText2').value = originalText;
 }

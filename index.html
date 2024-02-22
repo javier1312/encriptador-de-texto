@@ -14,11 +14,11 @@
     </header>
     <main>
         <section class="seccion1">
-            <textarea id="textoOriginal" placeholder="Ingresa el texto aqui"></textarea>
+            <textarea id="textoOriginal" oninput="habilitarBotones();" placeholder="Ingresa el texto aqui"></textarea>
             <label id="exclamacion" for="exclamacion"><img src="img/exclamacion.png" alt="signo de exclamación" >Solo letras minúsculas y sin acentos</label>
             <div class="contenedor-botones">
-                <button onclick="encriptarTexto();" id="Encriptar" class="botones">Encriptar</button>
-                <button onclick="desencriptarTexto();" id="Desencriptar" class="botones">Desencriptar</button>
+                <button onclick="encriptarTexto();" id="Encriptar" class="botones" disabled>Encriptar</button>
+                <button onclick="desencriptarTexto();" id="Desencriptar" class="botones" disabled>Desencriptar</button>
             </div>
         </section>
         <section class="seccion2">
@@ -34,8 +34,8 @@
     <footer>
         <h2>&copy Copyright by Javier Zavala 2024</h2>
         <section class="contenedor-redes-sociales">
-            <a href="https://www.linkedin.com/in/javierzavala-dev/" class="redes-sociales"><img src="img/logotipo-de-linkedin.png" alt=""></a>
-            <a href="https://github.com/javier1312" class="redes-sociales"><img src="img/signo-de-github.png" alt=""></a>
+            <a href="https://www.linkedin.com/in/javierzavala-dev/" class="redes-sociales"><img src="img/logotipo-de-linkedin-b.png" alt=""></a>
+            <a href="https://github.com/javier1312" class="redes-sociales"><img src="img/signo-de-github-b.png" alt=""></a>
         </section>
     </footer>
     <script src="app.js"></script>
