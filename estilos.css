@@ -342,3 +342,20 @@ footer img{
         width: 100%;
     }
 }
+
+@media screen and (max-width:375px){
+    .seccion1 textarea{
+        height: 10vh;
+        font-size: 20px;
+    }
+
+    #Encriptar,#Desencriptar{
+        width: 80%;
+        height: 7vh;
+        padding: 5px;
+    }
+
+    footer{
+        bottom: 20px;
+    }
+}
