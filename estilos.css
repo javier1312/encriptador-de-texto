@@ -344,6 +344,11 @@ footer img{
 }
 
 @media screen and (max-width:375px){
+
+    .seccion1,.seccion2,footer,main{
+        width: auto;
+        margin: 0 auto;
+    }
     .seccion1 textarea{
         height: 10vh;
         font-size: 20px;
