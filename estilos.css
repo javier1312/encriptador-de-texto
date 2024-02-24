@@ -202,6 +202,7 @@ footer img{
         background-repeat: none;
         width: auto;
         margin: 0 auto;
+        flex: 1;
     }
 
     main{
@@ -228,5 +229,6 @@ footer img{
 
     footer{
         position: relative;
+        bottom: 10px;
     }
 }
