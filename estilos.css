@@ -166,7 +166,6 @@ main{
 }
 
 footer{
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -225,5 +224,9 @@ footer img{
 
     #muñeco{
         display: none;
+    }
+
+    footer{
+        position: relative;
     }
 }
